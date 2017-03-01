@@ -1,0 +1,32 @@
+.button {
+  margin: 0;
+  padding: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: 1;
+  font-size: 18px;
+  width: auto;
+  background: #FFFFFF;
+  border: 2px solid #DCDDDE;
+
+  &--primary {
+    overflow: visible;
+    background: $brand-color;
+    border: 2px solid $brand-color;
+    color: #fff;
+    text-align: center;
+  }
+
+  &--secondary {
+    overflow: visible;
+    border-color: #fff;
+    color: mix(black, $brand-color, 20%);
+    text-align: center;
+
+    &:hover {
+      opacity: .8;
+      @include easeOut;
+    }
+  }
+}

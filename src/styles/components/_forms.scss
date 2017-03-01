@@ -1,0 +1,108 @@
+input,
+select,
+button,
+textarea
+{
+  margin: 0;
+  padding: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: 1;
+  font-size: 18px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 2px solid #DCDDDE;
+}
+
+label {
+  margin: 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: 0;
+  border-color: $brand-color;
+}
+
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+
+}
+
+input[type=checkbox],
+input[type=radio] {
+  width: 18px;
+  height: 18px;
+}
+
+input[type=file] {
+
+}
+
+/* Search Input
+-----------------------------------------------*/
+
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance:textfield;
+  -webkit-box-sizing:content-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display:none;
+}
+
+/* Buttons
+-----------------------------------------------*/
+
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  overflow: visible;
+  background: $brand-color;
+  border: 2px solid $brand-color;
+  color: #fff;
+  text-align: center;
+}
+
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background:none;
+}
+
+/* Textarea
+-----------------------------------------------*/
+
+textarea {
+  vertical-align: top;
+  overflow: auto;
+  resize: none;
+}
+
+/* Selects
+-----------------------------------------------*/
+
+select {
+
+}
+
+select[multiple] {
+  vertical-align: top;
+}

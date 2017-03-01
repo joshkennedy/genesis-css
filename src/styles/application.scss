@@ -1,0 +1,218 @@
+@import 'settings/_settings';
+@import 'settings/_colors';
+
+@import 'helpers/_mixins';
+@import 'helpers/_underline';
+@import 'helpers/_normalize';
+@import 'helpers/_rem';
+@import 'helpers/_spacing';
+
+@import 'layout/_gridlex';
+
+// @import 'typography/*';
+
+@import 'components/_buttons';
+@import 'components/_forms';
+@import 'components/_menu';
+
+// Basic
+html {
+  @include rem-baseline;
+}
+
+body {
+  @include rem(font-size, 18px);
+  color: $text-color;
+  font-family: $slab;
+  font-weight: 400;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+::-moz-selection {
+  background-color: $brand-color;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: $brand-color;
+  color: #ffffff;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  height: 60vh;
+  min-height: 500px;
+  background: $brand-color;
+  color: rgba(255,255,255,.75);
+
+  h1 {
+    @include rem(font-size, 50px);
+    color: #fff;
+  }
+}
+
+.site-header {
+  position: fixed;
+  width: 100%;
+  @include rem(padding, 20px 0);
+  z-index: 99;
+
+  .logo,
+  .menu-nav {
+    // position: absolute;
+  }
+
+  .logo {
+    float: left;
+    position: relative;
+    left: 2em;
+
+    &:hover {
+      animation: tada 1s;
+    }
+  }
+
+  .menu-nav {
+    float: right;
+  }
+}
+
+.site-footer {
+  @include rem(padding, 20px 0);
+  background: $light-gray;
+
+  ul li {
+    @include rem(font-size, 14px);
+  }
+}
+
+.top-bar {
+  @include rem(padding, 10px);
+  background: mix(black, $brand-color, 12%);
+  color: #fff;
+  text-align: center;
+  margin: 85px 0 0;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-color;
+  font-family: $sans;
+  font-weight: 700;
+}
+
+h1 {
+  @include rem(font-size, 40px);
+}
+
+h2 {
+  @include rem(font-size, 28px);
+}
+
+h3 {
+  @include rem(font-size, 22px);
+}
+
+p {
+  @include rem(line-height, 28px);
+}
+
+.list-unstyled {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-inline {
+  li {
+    display: inline;
+  }
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+a {
+  @include underline;
+  color: $brand-color();
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+}
+
+
+.container {
+  @include rem(width, 800px);
+  margin: 0 auto;
+
+  &.page-content {
+    @include rem(padding, 60px 0);
+    flex: 1;
+  }
+}
+
+.class-list {
+  &--item {
+    @include rem(padding, 20px 0);
+
+    &:after {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 2' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='1.414'%3E%3Cg transform='scale%28.2 .03%29'%3E%3Cpath fill='none' d='M0 0h50v50H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h50v50H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url%28%23a%29'%3E%3Ccircle cx='8.279' cy='7.104' r='.514' transform='matrix%287.29606 0 0 48.6404 -35.402 -320.55%29'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-size: 9px 2px, 9px 2px;
+      background-repeat: repeat-x, repeat-x;
+      background-position: 0 100%, 0 0;
+      @include rem(padding, 10px 0);
+      position: relative;
+      display: block;
+      content: ''
+    }
+  }
+}
+
+hr {
+  border: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 2' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='1.414'%3E%3Cg transform='scale%28.2 .03%29'%3E%3Cpath fill='none' d='M0 0h50v50H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h50v50H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url%28%23a%29'%3E%3Ccircle cx='8.279' cy='7.104' r='.514' transform='matrix%287.29606 0 0 48.6404 -35.402 -320.55%29'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 9px 2px, 9px 2px;
+  background-repeat: repeat-x, repeat-x;
+  background-position: 0 0, 0 100%;
+  @include rem(padding, 20px 0);
+  @include rem(margin-top, 40px);
+}
+
+.logo {
+  border: none;
+
+  &.header-logo {
+
+    img {
+      @include rem(height, 40px);
+      width: auto;
+    }
+  }
+
+  &.footer-logo {
+    right: 0;
+    position: absolute;
+    top: calc(50% - 20px);
+
+    img {
+      @include rem(height, 40px);
+      width: auto;
+    }
+  }
+
+}
+
+
+.fluid-width {
+  max-width: 100%;
+  height: auto;
+}
